@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&family=Lexend+Deca&family=Pixelify+Sans&family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&family=Lexend+Deca&family=Pixelify+Sans&family=Raleway:wght@400;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+}
+
+main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+
+header{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 30px;
+}
+
+
+
+li{
+  list-style: none;
+  font-size: 10px;
+  font-family: 'Inter', sans-serif;
+  display: inline-block;
+  margin-right: 30px;
+color: hsl(243, 87%, 12%);
+
+}
+
+.header-conteudo-principal {
+  background-image: url('../public/images/bg-curve-desktop.svg'); /* URL da imagem de fundo */
+  background-size: cover; /* Ajusta a imagem para cobrir todo o espaço */
+  position: relative; /* Para que as posições absolutas dos elementos filhos sejam relativas a este elemento */
+  width: 100%;
+}
+
+/* Estilos adicionais para o conteúdo principal */
+.header-conteudo-principal header,
+.header-conteudo-principal .imagem {
+  position: relative; /* Define a posição como relativa para que não seja coberto pelo plano de fundo */
+  z-index: 1; /* Garante que o conteúdo esteja acima do plano de fundo */
+}
+
+.pessoas{
+  width: 400px;
+}
+
+h1{
+  font-family: 'Inter', sans-serif;
+  font-size: 30px;
+  color:  hsl(243, 87%, 12%);
+}
+
+p{
+  color:  hsl(243, 87%, 12%);
+  padding: 3px;
+  font-size: 14px;
+}
+
+input{
+  border: none;
+  padding: 5px;
+}
+
+.inputVermelho{
+  border: 1px solid red;
+}
+
+
+.textoBlack{
+  color: red;
+}
+
+button{
+  border: none;
+  padding: 5px;
+}
+
+.logo{
+  width: 70px;
+  margin-right: 100px;
+
+}
