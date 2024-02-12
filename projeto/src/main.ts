@@ -20,7 +20,7 @@ const verificarInputValor = () => {
     mensagemDeEnvioEmail()
     input.classList.remove("inputVermelho")
     input.classList.add("inputverde")
-    mostrar.textContent = ``
+    mostrar.textContent = ""
   }
 };
 

@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&family=Lexend+Deca&family=Pixelify+Sans&family=Raleway&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&family=Lexend+Deca&family=Pixelify+Sans&family=Raleway:wght@400;700&display=swap');
-*{
+
+* {
   margin: 0;
   padding: 0;
 }
 
-main{
+main {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,7 +14,7 @@ main{
 }
 
 
-header{
+header {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -22,73 +23,152 @@ header{
 
 
 
-li{
+.li {
   list-style: none;
   font-size: 10px;
   font-family: 'Inter', sans-serif;
   display: inline-block;
   margin-right: 30px;
-color: hsl(243, 87%, 12%);
+  color: hsl(243, 87%, 12%);
+  cursor: pointer;
+  position: relative; 
+}
 
+.li:focus {
+  outline: none; 
+}
+
+.li::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: red;
+  transition: width 0.3s ease; 
+}
+
+.li:focus::after {
+  width: 100%; 
+  animation: borderAnimation 1s infinite alternate; 
+}
+
+@keyframes borderAnimation {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 .header-conteudo-principal {
-  background-image: url('../public/images/bg-curve-desktop.svg'); 
-  background-size: cover; 
-  position: relative; 
+  background-image: url('../public/images/bg-curve-desktop.svg');
+  background-size: cover;
+  position: relative;
   width: 100%;
 }
 
-
 .header-conteudo-principal header,
 .header-conteudo-principal .imagem {
-  position: relative; 
-  z-index: 1; 
+  position: relative;
+  z-index: 1;
 }
 
-.pessoas{
+.pessoas {
   width: 400px;
 }
 
-h1{
-  font-family: 'Inter', sans-serif;
-  font-size: 30px;
-  color:  hsl(243, 87%, 12%);
+
+.dark-mode-toggle {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
 }
 
-p{
-  color:  hsl(243, 87%, 12%);
+.dark-mode-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+
+h1 {
+  font-family: 'Inter', sans-serif;
+  font-size: 30px;
+  color: hsl(243, 87%, 12%);
+}
+
+p {
+  color: hsl(243, 87%, 12%);
   padding: 3px;
   font-size: 14px;
 }
 
-input{
+input {
   border: none;
   padding: 5px;
   width: 50%;
 }
 
 input[type="text"]:focus {
-  border-color: blue; /* Altera a cor da borda quando em foco */
-  outline: none; /* Remove a borda de destaque padrão do navegador */
-  box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Adiciona uma sombra quando em foco */
+  border-color: blue;
+  box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
 }
-.inputVermelho{
+
+.inputVermelho {
   border: 2px solid red;
 }
 
 
-.textoBlack{
+.textoBlack {
   color: red;
 }
 
-.inputverde{
+.inputverde {
   border: 2px solid hsl(224, 93%, 58%);
 }
 
 
-
-#botaoVerificar{
+#botaoVerificar {
   border: none;
   padding: 10px;
   border-radius: 5px;
@@ -97,13 +177,11 @@ input[type="text"]:focus {
   width: 40%;
 }
 
-.botoes{
+.botoes {
   margin-top: 8px;
 }
 
-
-.logo{
+.logo {
   width: 70px;
   margin-right: 100px;
-
 }
