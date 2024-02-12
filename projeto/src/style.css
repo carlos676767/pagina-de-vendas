@@ -77,7 +77,7 @@ input{
   color: red;
 }
 
-button{
+#botaoVerificar{
   border: none;
   padding: 10px;
   border-radius: 5px;
