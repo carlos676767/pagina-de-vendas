@@ -33,17 +33,17 @@ color: hsl(243, 87%, 12%);
 }
 
 .header-conteudo-principal {
-  background-image: url('../public/images/bg-curve-desktop.svg'); /* URL da imagem de fundo */
-  background-size: cover; /* Ajusta a imagem para cobrir todo o espaço */
-  position: relative; /* Para que as posições absolutas dos elementos filhos sejam relativas a este elemento */
+  background-image: url('../public/images/bg-curve-desktop.svg'); 
+  background-size: cover; 
+  position: relative; 
   width: 100%;
 }
 
-/* Estilos adicionais para o conteúdo principal */
+
 .header-conteudo-principal header,
 .header-conteudo-principal .imagem {
-  position: relative; /* Define a posição como relativa para que não seja coberto pelo plano de fundo */
-  z-index: 1; /* Garante que o conteúdo esteja acima do plano de fundo */
+  position: relative; 
+  z-index: 1; 
 }
 
 .pessoas{
@@ -68,6 +68,11 @@ input{
   width: 50%;
 }
 
+input[type="text"]:focus {
+  border-color: blue; /* Altera a cor da borda quando em foco */
+  outline: none; /* Remove a borda de destaque padrão do navegador */
+  box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Adiciona uma sombra quando em foco */
+}
 .inputVermelho{
   border: 2px solid red;
 }
@@ -80,6 +85,8 @@ input{
 .inputverde{
   border: 2px solid hsl(224, 93%, 58%);
 }
+
+
 
 #botaoVerificar{
   border: none;
