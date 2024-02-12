@@ -18,8 +18,12 @@ const verificarInputValor = () => {
     input.classList.add("inputVermelho");
   }else{
     mensagemDeEnvioEmail()
+    input.classList.remove("inputVermelho")
+    input.classList.add("inputverde")
+    mostrar.textContent = ``
   }
 };
+
 
 const botaoVerificar = document.getElementById("botaoVerificar");
 

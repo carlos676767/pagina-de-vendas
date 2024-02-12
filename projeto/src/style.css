@@ -69,12 +69,16 @@ input{
 }
 
 .inputVermelho{
-  border: 1px solid red;
+  border: 2px solid red;
 }
 
 
 .textoBlack{
   color: red;
+}
+
+.inputverde{
+  border: 2px solid hsl(224, 93%, 58%);
 }
 
 #botaoVerificar{
@@ -89,6 +93,8 @@ input{
 .botoes{
   margin-top: 8px;
 }
+
+
 .logo{
   width: 70px;
   margin-right: 100px;
