@@ -65,6 +65,7 @@ p{
 input{
   border: none;
   padding: 5px;
+  width: 50%;
 }
 
 .inputVermelho{
@@ -78,9 +79,16 @@ input{
 
 button{
   border: none;
-  padding: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  background-color: hsl(224, 93%, 58%);
+  width: 40%;
 }
 
+.botoes{
+  margin-top: 8px;
+}
 .logo{
   width: 70px;
   margin-right: 100px;
