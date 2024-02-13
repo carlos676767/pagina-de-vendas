@@ -6,6 +6,10 @@
   padding: 0;
 }
 
+body{
+  transition: background-color 0.3s ease; 
+}
+
 main {
   display: flex;
   align-items: center;
@@ -21,6 +25,9 @@ header {
   margin-top: 30px;
 }
 
+.darkModeblack{
+  background-color: black;
+}
 
 
 .li {
