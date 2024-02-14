@@ -32,45 +32,57 @@ botaoVerificar?.addEventListener("click", () => {
 });
 
 type Cores = {
-  cor: string
-}
+  corPreta: string;
+  corWhite: string;
+};
 
 const darkMode = () => {
-  const inputChecked = document.getElementById(
+  let inputChecked = document.getElementById(
     "darkModeToggle"
   ) as HTMLInputElement;
   const body = document.body;
 
   const cores: Cores = {
-    cor: "black",
+    corPreta: "black",
+    corWhite: "white",
   };
 
   const bodyBlack = () => {
-    body.style.backgroundColor = cores.cor;
+    body.style.backgroundColor = cores.corPreta;
   };
 
-  const armazenarValor: string = inputChecked.checked = true
-  
+  const bodyWhite = () => {
+    body.style.backgroundColor = cores.corWhite;
+  };
 
   inputChecked.addEventListener("change", () => {
     if (inputChecked.checked) {
       bodyBlack();
-      localStorage.setItem("black", cores.cor)
-      localStorage.setItem("valorCheckado", armazenarValor)
+      localStorage.setItem("black", cores.corPreta);
+      localStorage.setItem("valorCheckado", inputChecked.checked.toString());
     } else {
-      alert(`nao selecionado`);
+      bodyWhite();
+      localStorage.setItem("valorCheckado", inputChecked.checked.toString());
     }
   });
 
   const savedLocalStorageData = () => {
-    const recuperarValorBlack = localStorage.getItem("black")
-    if (recuperarValorBlack === cores.cor) {
-      bodyBlack()
-    }
-  }
+    const recuperarValorBlack = localStorage.getItem("black");
+    const recuperarValorEstado = localStorage.getItem("valorCheckado");
+    console.log(recuperarValorEstado);
 
-  savedLocalStorageData()
+    if (
+      recuperarValorBlack === cores.corPreta &&
+      recuperarValorEstado == "true"
+    ) {
+      bodyBlack();
+      inputChecked.checked = true;
+    } else {
+      bodyWhite();
+      inputChecked.checked = false;
+    }
+  };
+  savedLocalStorageData();
 };
 
-
-darkMode()
+darkMode();
