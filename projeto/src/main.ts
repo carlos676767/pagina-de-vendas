@@ -31,31 +31,46 @@ botaoVerificar?.addEventListener("click", () => {
   verificarInputValor();
 });
 
+type Cores = {
+  cor: string
+}
 
 const darkMode = () => {
-  const armezenarBody = document.body
+  const inputChecked = document.getElementById(
+    "darkModeToggle"
+  ) as HTMLInputElement;
+  const body = document.body;
+
+  const cores: Cores = {
+    cor: "black",
+  };
+
   const bodyBlack = () => {
-    armezenarBody.style.backgroundColor = `black`
-  }
-  const darkModeButton = document.getElementById("darkModeToggle") as HTMLInputElement;
-  darkModeButton.addEventListener("change", () => {
-    if (darkModeButton.checked) {
-      bodyBlack()
-      localStorage.setItem("black", "black")
+    body.style.backgroundColor = cores.cor;
+  };
+
+  const armazenarValor: string = inputChecked.checked = true
+  
+
+  inputChecked.addEventListener("change", () => {
+    if (inputChecked.checked) {
+      bodyBlack();
+      localStorage.setItem("black", cores.cor)
+      localStorage.setItem("valorCheckado", armazenarValor)
+    } else {
+      alert(`nao selecionado`);
     }
   });
 
-  const salvarDarkMode = () => {
-    const recuperarValor = localStorage.getItem("black")
-    console.log(recuperarValor);
-    if (recuperarValor === `black`) {
+  const savedLocalStorageData = () => {
+    const recuperarValorBlack = localStorage.getItem("black")
+    if (recuperarValorBlack === cores.cor) {
       bodyBlack()
     }
   }
 
-  salvarDarkMode()
+  savedLocalStorageData()
 };
 
-darkMode();
 
-
+darkMode()
