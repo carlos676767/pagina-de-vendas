@@ -43,7 +43,7 @@ const darkMode = () => {
   const body = document.body;
 
   const cores: Cores = {
-    corPreta: "black",
+    corPreta: "rgba(0, 0, 0, 0.5)",
     corWhite: "white",
   };
 
@@ -86,3 +86,16 @@ const darkMode = () => {
 };
 
 darkMode();
+
+const alterarTituLoBody = () => {
+  const titulo = document.title;
+  addEventListener("blur", () => {
+    document.title = "volte😔";
+  });
+
+  addEventListener("focus", () => {
+    document.title = titulo;
+  });
+};
+
+alterarTituLoBody();
