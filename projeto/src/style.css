@@ -10,6 +10,12 @@ body{
   transition: background-color 0.3s ease; 
 }
 
+
+html {
+  scroll-behavior: smooth;
+}
+
+
 main {
   display: flex;
   align-items: center;
@@ -184,6 +190,7 @@ input[type="text"]:focus {
   color: white;
   background-color: hsl(224, 93%, 58%);
   width: 40%;
+  cursor: pointer;
 }
 
 .botoes {

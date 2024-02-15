@@ -1,32 +1,32 @@
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 const input = document.getElementById("input") as HTMLInputElement;
 
 const mensagemDeEnvioEmail = () => {
-    Swal.fire({
-      title: "Email Enviado",
-      text: "Seu email foi enviado com sucesso!",
-      icon: "success",
-    });
-  };
+  Swal.fire({
+    title: "Email Enviado",
+    text: "Seu email foi enviado com sucesso!",
+    icon: "success",
+  });
+};
 
 const verificarInputValor = () => {
-  let mostrar = document.querySelector(".mostrar") as HTMLParagraphElement;
-  let obterDadosInput = input.value;
-  if (obterDadosInput === "") {
-    mostrar.classList.add("textoBlack");
-    mostrar.innerHTML = "Digite um email valido.";
+  const mostrar = document.querySelector(".mensagem") as HTMLParagraphElement;
+  const obterDadosInput = input.value;
+  const dominiosValidosRegex =
+    /@gmail\.|@yahoo\.|@outlook\.|@aol\.|@icloud\.|@protonmail\.|@zoho\.|@gmx\.|@mail\.|@yandex\./;
+  if (dominiosValidosRegex.test(obterDadosInput)) {
+    mensagemDeEnvioEmail();
+    input.classList.add("inputverde");
+    input.classList.remove("inputVermelho");
+    mostrar.textContent = "";
+  } else {
+    mostrar.textContent = "Digite um email valido";
+    input.classList.remove("inputverde");
     input.classList.add("inputVermelho");
-  }else{
-    mensagemDeEnvioEmail()
-    input.classList.remove("inputVermelho")
-    input.classList.add("inputverde")
-    mostrar.textContent = ""
   }
 };
 
-
 const botaoVerificar = document.getElementById("botaoVerificar");
-
 botaoVerificar?.addEventListener("click", () => {
   verificarInputValor();
 });
@@ -99,4 +99,3 @@ const alterarTituLoBody = () => {
 };
 
 alterarTituLoBody();
-

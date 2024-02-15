@@ -1,17 +1,18 @@
 <!doctype html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fylo Project</title>
-    <link rel="stylesheet" href="src/style.css">
-    <meta name="description" content="pagina De vendas.">
-    <link rel="shortcut icon" href="public/images/logo.svg" type="image/x-icon">
-  </head>
-  <body>
 
-<div class="header-conteudo-principal">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fylo Project</title>
+  <link rel="stylesheet" href="src/style.css">
+  <meta name="e uma pagina de vendas" content="pagina De vendas.">
+  <link rel="shortcut icon" href="public/images/logo.svg" type="image/x-icon">
+</head>
+<body>
+
+
   <header>
     <img src="public/images/logo.svg" alt="logo" class="logo">
     <ul class="ul">
@@ -19,27 +20,35 @@
       <li class="li">Team</li>
       <li class="li">Sign In</li>
       <li class="li"> <label class="dark-mode-toggle">
-        <input type="checkbox" id="darkModeToggle">
-        <span class="slider"></span>
-      </label></li>
+          <input type="checkbox" id="darkModeToggle">
+          <span class="slider"></span>
+        </label></li>
     </ul>
   </header>
 
-<main>
-  <div class="filha">
-    <h1>Construa uma carreira de <br class="br">sucesso conheça já nossos <br class="br"> serviços.</h1>
-    <br>
-    <p>Com o Fylo, você consegue um emprego como desenvolvedor <br> de uma maneira fácil. Venha já e confira nosso
-      trabalho.</p>
-    <div class="botoes">
-      <label for="text"><input type="email" id="input"><button id="botaoVerificar">Get Starded</button></label>
-      <p class="mostrar"></p>
-    </div>
-  </div>
-  <img src="public/images/illustration-1.svg" alt="imagem" class="pessoas">
-</main>
+
+   <main>
+    <article> <!-- Adição da tag <article> para melhorar o SEO -->
+      <section class="filha">
+        <h1>Construa uma carreira de <br class="br">sucesso conheça já nossos <br class="br"> serviços.</h1>
+        <br>
+        <p>Com o Fylo, você consegue um emprego como desenvolvedor <br> de uma maneira fácil. Venha já e confira nosso trabalho.</p>
+        <div class="botoes">
+     
+            <input type="email" id="input" placeholder="Seu e-mail">
+            <button type="submit" id="botaoVerificar">Get Started</button>
+    
+          <p class="mensagem"></p>
+        </div>
+      </section>
+    </article> 
+    <img src="public/images/illustration-1.svg" alt="imagem" class="pessoas">
+  </main>
 </div>
 
-<script type="module" src="/src/main.ts"></script>
+<secction class="conteudo-do-meio">
+
+</secction>
+  <script type="module" src="/src/main.ts"></script>
 </body>
 </html>
