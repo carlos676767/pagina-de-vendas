@@ -64,7 +64,41 @@ header {
 }
 
 .informacoes{
+  display: flex;
+  flex-direction: column;
   background-color: white;
+  padding: 20px;
+  gap: 5px;
+  margin-top: 20px;
+  width: 300px;box-shadow: 8px 4px 10px 3px rgba(0, 0, 0, 0.68);
+  -webkit-box-shadow: 8px 4px 10px 3px rgba(0, 0, 0, 0.68);
+  -moz-box-shadow: 8px 4px 10px 3px rgba(0, 0, 0, 0.68);
+  border-radius: 10px;
+}
+
+.texto-ceo{
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+}
+
+.informacoes img{
+  width: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  height: 30px;
+}
+
+.informacoes-ceo{
+  display: flex;
+}
+
+.nome{
+  font-weight: bolder;
+  font-size: 10px;
+}
+
+.ceo{
+  font-size: 10px;
 }
 
 .li {
