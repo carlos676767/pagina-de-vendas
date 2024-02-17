@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&family=Lexend+Deca&family=Pixelify+Sans&family=Raleway&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&family=Lexend+Deca&family=Pixelify+Sans&family=Raleway:wght@400;700&display=swap');
 
-* {
+*{
   margin: 0;
   padding: 0;
 }
 
 body{
   transition: background-color 0.3s ease; 
+  
 }
 
 
@@ -239,6 +240,10 @@ aside{
 
 h2{
   font-size: 30px;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 input {
@@ -283,6 +288,22 @@ input[type="text"]:focus {
 .logo {
   width: 70px;
   margin-right: 100px;
+}
+
+footer{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.main-section{
+  background-color: hsl(238, 22%, 44%);
+  justify-content: center;
+  align-items: center;
+}
+
+h3{
+  color: white;
 }
 @media(max-width: 767px) {
   main {
