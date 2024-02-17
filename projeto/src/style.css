@@ -69,7 +69,7 @@ header {
   flex-direction: column;
   background-color: white;
   padding: 20px;
-  gap: 5px;
+
   margin-top: 20px;
   width: 300px;box-shadow: 8px 4px 10px 3px rgba(0, 0, 0, 0.68);
   -webkit-box-shadow: 8px 4px 10px 3px rgba(0, 0, 0, 0.68);
@@ -82,6 +82,9 @@ header {
   font-size: 11px;
 }
 
+p a{
+  text-decoration: none;
+}
 .informacoes img{
   width: 30px;
   border-radius: 50%;
@@ -301,6 +304,19 @@ footer{
   justify-content: center;
   align-items: center;
 }
+
+.main-section p{
+  color: white;
+}
+.main-section input{
+  display: flex;
+}
+
+.inputs{
+  width: 30px;
+}
+
+
 
 h3{
   color: white;
