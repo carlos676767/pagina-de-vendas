@@ -10,8 +10,10 @@
   <meta name="e uma pagina de vendas" content="pagina De vendas.">
   <link rel="shortcut icon" href="public/images/logo.svg" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
+
 <body>
   <header>
     <img src="public/images/logo.svg" alt="logo" class="logo">
@@ -19,6 +21,10 @@
       <li class="li">Features</li>
       <li class="li">Team</li>
       <li class="li">Sign In</li>
+      <li class="li"><select name="select" id="select">
+        <option value="Ingles">Ingles</option>
+        <option value="portugues">portugues</option>
+      </select></li>
       <li class="li"> <label class="dark-mode-toggle">
           <input type="checkbox" id="darkModeToggle">
           <span class="slider"></span>
@@ -57,126 +63,127 @@
         <p><a href="#">Conheça mais sobre a Fylo <img src="public/images/icon-arrow.svg" alt="fylo"></a></p>
       </div>
       <div class="informacoes">
-        <p class="texto-ceo">"Desde 2008, estamos na vanguarda da tecnologia, sempre nos adaptando às demandas do mercado em constante mudança."</p>
+        <p class="texto-ceo">"Desde 2008, estamos na vanguarda da tecnologia, sempre nos adaptando às demandas do
+          mercado em constante mudança."</p>
         <div class="informacoes-ceo">
-         <img src="public/images/avatar-testimonial.jpg" alt="ceo">
-        <div class="textos">
-          <p class="nome">Jhon Ribeiro</p>
-          <p class="ceo">Fundador & ceo</p>
-        </div>
+          <img src="public/images/avatar-testimonial.jpg" alt="ceo">
+          <div class="textos">
+            <p class="nome">Jhon Ribeiro</p>
+            <p class="ceo">Fundador & ceo</p>
+          </div>
         </div>
       </div>
     </aside>
     <img src="public/images/illustration-2.svg" alt="pessoas segurando cartaz" class="pessoas-segurando-cartaz">
   </secction>
-  
+
   <!-- Footer -->
-<footer class="text-center text-lg-start bg-body-tertiary text-muted">
-  <!-- Section: Social media -->
-  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-    <!-- Left -->
-    <div class="me-5 d-none d-lg-block">
-      <span>Conecte-se conosco nas redes sociais:</span>
-    </div>
-    <!-- Left -->
-
-    <!-- Right -->
-    <div>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-google"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-    <!-- Right -->
-  </section>
-  <!-- Section: Social media -->
-
-  <!-- Section: Links  -->
-  <section class="">
-    <div class="container text-center text-md-start mt-5">
-      <!-- Grid row -->
-      <div class="row mt-3">
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-          <!-- Content -->
-          <h6 class="text-uppercase fw-bold mb-4">
-           <img src="public/images/logo.svg" alt="">
-          </h6>
-          <p>
-            Não perca a chance com a Fylo! Junte-se a uma 
-              equipe inovadora e apaixonada por projeto emocionantes 
-              Aproveite as oportunidades de aprendizado e crescimento pessoal.
-               Seja parte dessa jornada de sucesso!
-          </p>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
-         
-          <p>
-            <a href="#!" class="text-reset">About us</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">jobs</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">press</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">blog</a>
-          </p>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
-        
-          <p>
-            <a href="#!" class="text-reset">contact Us</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">terms</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">privacy</a>
-          </p>
-         
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-          <!-- Links -->
-        
-          <p>
-            <i class="fas fa-envelope me-3"></i>
-            Fylo@gmail.com
-          </p>
-          <p><i class="fas fa-phone me-3"></i> +0123456788</p>
-          <p><i class="fas fa-print me-3"></i> +0123456789</p>
-        </div>
-        
+  <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <!-- Left -->
+      <div class="me-5 d-none d-lg-block">
+        <span>Conecte-se conosco nas redes sociais:</span>
       </div>
-   
-    </div>
-  </section>
+      <!-- Left -->
+
+      <!-- Right -->
+      <div>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <img src="public/images/logo.svg" alt="">
+            </h6>
+            <p>
+              Não perca a chance com a Fylo! Junte-se a uma
+              equipe inovadora e apaixonada por projeto emocionantes
+              Aproveite as oportunidades de aprendizado e crescimento pessoal.
+              Seja parte dessa jornada de sucesso!
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+
+            <p>
+              <a href="#!" class="text-reset">About us</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">jobs</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">press</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">blog</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+
+            <p>
+              <a href="#!" class="text-reset">contact Us</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">terms</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">privacy</a>
+            </p>
+
+          </div>
+          <!-- Grid column -->
+
+
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              Fylo@gmail.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> +0123456788</p>
+            <p><i class="fas fa-print me-3"></i> +0123456789</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
 
 
   <script type="module" src="/src/main.ts"></script>

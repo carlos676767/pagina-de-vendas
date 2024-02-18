@@ -9,6 +9,8 @@ const mensagemDeEnvioEmail = () => {
   });
 };
 
+
+
 const verificarInputValor = () => {
   const mostrar = document.querySelector(".mensagem") as HTMLParagraphElement;
   const obterDadosInput = input.value;
@@ -30,6 +32,9 @@ const botaoVerificar = document.getElementById("botaoVerificar");
 botaoVerificar?.addEventListener("click", () => {
   verificarInputValor();
 });
+
+
+
 
 type Cores = {
   corPreta: string;
@@ -99,3 +104,14 @@ const alterarTituLoBody = () => {
 };
 
 alterarTituLoBody();
+
+
+const trocarIdioma = () => {
+  const select = document.querySelector("select") as HTMLSelectElement;
+  select.addEventListener("change", () => {
+    const selecionarOption = select.options[select.selectedIndex].value;
+    selecionarOption == "Ingles" ? alert(`e ingles`) : alert(`portugues`);
+  });
+};
+
+trocarIdioma();

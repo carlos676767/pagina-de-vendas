@@ -253,6 +253,7 @@ input {
   border: none;
   padding: 5px;
   width: 50%;
+  outline: none;
 }
 
 input[type="text"]:focus {
