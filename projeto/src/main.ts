@@ -1,7 +1,7 @@
 import Swal from "sweetalert2";
-const input = document.getElementById("input") as HTMLInputElement;
-console.log(input);
+import { elementoEmIngles } from "./traducao";
 
+export const input = document.getElementById("input") as HTMLInputElement;
 
 const mensagemDeEnvioEmail = () => {
   Swal.fire({
@@ -11,13 +11,11 @@ const mensagemDeEnvioEmail = () => {
   });
 };
 
-
-
 const verificarInputValor = () => {
   const mostrar = document.querySelector(".mensagem") as HTMLParagraphElement;
   const obterDadosInput = input.value;
   const dominiosValidosRegex =
-    /@gmail\.com|@yahoo\.com|@outlook\.com|@aol\.com|@icloud\.com|@protonmail\.com|@zoho\.com|@gmx\.com|@mail\.com|@yandex\./;
+    /^[\w-]+(?:\.[\w-]+)*@(?:[\w-]+\.)+[a-zA-Z]{2,7}$/;
   if (dominiosValidosRegex.test(obterDadosInput)) {
     mensagemDeEnvioEmail();
     input.classList.add("inputverde");
@@ -34,8 +32,6 @@ const botaoVerificar = document.getElementById("botaoVerificar");
 botaoVerificar?.addEventListener("click", () => {
   verificarInputValor();
 });
-
-
 
 type Cores = {
   corPreta: string;
@@ -106,47 +102,13 @@ const alterarTituLoBody = () => {
 
 alterarTituLoBody();
 
-const h1 = document.querySelector("h1") as HTMLHeadingElement;
-const p = document.querySelectorAll("p")
-const h2 = document.querySelector("h2") as HTMLHeadingElement
-const a = document.querySelectorAll("a")[0] as HTMLAnchorElement;
-
-
-
-
 const trocarIdioma = () => {
   const select = document.querySelector("select") as HTMLSelectElement;
-  type traducaoIngles = {
-    traduzirH1: string;
-    traduzirP: string;
-    traduzirPlacelHoder: string;
-    traducaoH2: string;
-    traduzirPExplicativo: string
-    traduirA: string
-  };
-
-  const traducaoIngles: traducaoIngles = {
-    traduzirH1:
-      "Build a successful career <br> and discover our services <br> now.",
-    traduzirP:
-      "With Fylo, you can get a job as a developer in an easy way.<br> Come now and check out our work",
-    traduzirPlacelHoder: "Your email",
-    traducaoH2: "Check out some of our products",
-    traduzirPExplicativo:
-      "At Fylo, we believe in the potential of students from their first year of college. <br>With our innovative program, you will have the opportunity to immerse yourself in the world of <br> back end development from an early age.",
-     traduirA: "Learn more about Fylo"
-  };
-
   select.addEventListener("change", () => {
     const selecionarOption = select.options[select.selectedIndex].value;
     if (selecionarOption == "Ingles") {
-      h1.innerHTML = traducaoIngles.traduzirH1;
-      p[0].innerHTML = traducaoIngles.traduzirP;
-      input.placeholder = traducaoIngles.traduzirPlacelHoder
-      h2.innerHTML = traducaoIngles.traducaoH2
-      p[2].innerHTML = traducaoIngles.traduzirPExplicativo
-      a.innerHTML = `${traducaoIngles.traduirA}<img src="public/images/icon-arrow.svg" alt="fylo">`
-    }else{
+      elementoEmIngles()
+    } else {
       alert(`portugues`);
     }
   });
