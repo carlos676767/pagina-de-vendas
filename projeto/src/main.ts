@@ -15,7 +15,7 @@ const verificarInputValor = () => {
   const mostrar = document.querySelector(".mensagem") as HTMLParagraphElement;
   const obterDadosInput = input.value;
   const dominiosValidosRegex =
-    /@gmail\.|@yahoo\.|@outlook\.|@aol\.|@icloud\.|@protonmail\.|@zoho\.|@gmx\.|@mail\.|@yandex\./;
+    /@gmail\.com|@yahoo\.com|@outlook\.com|@aol\.com|@icloud\.com|@protonmail\.com|@zoho\.com|@gmx\.com|@mail\.com|@yandex\./;
   if (dominiosValidosRegex.test(obterDadosInput)) {
     mensagemDeEnvioEmail();
     input.classList.add("inputverde");
@@ -110,7 +110,12 @@ const trocarIdioma = () => {
   const select = document.querySelector("select") as HTMLSelectElement;
   select.addEventListener("change", () => {
     const selecionarOption = select.options[select.selectedIndex].value;
-    selecionarOption == "Ingles" ? alert(`e ingles`) : alert(`portugues`);
+
+    if (selecionarOption == "Ingles") {
+      alert(`ingles`);
+    } else {
+      alert(`portugues`);
+    }
   });
 };
 
