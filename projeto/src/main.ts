@@ -1,5 +1,6 @@
 import Swal from "sweetalert2";
-import { elementoEmIngles } from "./traducao";
+import { aplicarTraducaoIngles, definirPortugues, salvarIdiomaIngles } from "./traducao";
+
 
 export const input = document.getElementById("input") as HTMLInputElement;
 
@@ -107,11 +108,13 @@ const trocarIdioma = () => {
   select.addEventListener("change", () => {
     const selecionarOption = select.options[select.selectedIndex].value;
     if (selecionarOption == "Ingles") {
-      elementoEmIngles()
+      aplicarTraducaoIngles()
     } else {
-      alert(`portugues`);
+      definirPortugues()
     }
   });
 };
 
 trocarIdioma();
+
+salvarIdiomaIngles()

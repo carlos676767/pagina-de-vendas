@@ -6,6 +6,7 @@ const h2 = document.querySelector("h2") as HTMLHeadingElement;
 const a = document.querySelectorAll("a")[0] as HTMLAnchorElement;
 const textoCeo = document.querySelector(".texto-ceo") as HTMLParagraphElement;
 const span = document.getElementById("parafro") as HTMLParagraphElement
+const perca = document.querySelector(".perca") as HTMLParagraphElement
 type traducaoIngles = {
   traduzirH1: string;
   traduzirP: string;
@@ -15,6 +16,7 @@ type traducaoIngles = {
   traduirA: string;
   textoCeo: string;
   textoSpan: string;
+  textoPerca: string;
 };
 
 const traducaoIngles: traducaoIngles = {
@@ -29,10 +31,14 @@ const traducaoIngles: traducaoIngles = {
   traduirA: "Learn more about Fylo",
   textoCeo:
     "Since 2008, we have been at the forefront of technology, always adapting to the demands of theever-changing market.",
-    textoSpan: "Connect with us on social media:"
+  textoSpan: "Connect with us on social media:",
+  textoPerca:
+    "Don't miss your chance with Fylo! Join a innovative team passionate about exciting projectsTake advantage of opportunities for learning and personal growth. Be part of this successful journey!",
 };
 
-export const elementoEmIngles = () => {
+
+
+const atualizarValoresEmIngles = () => {
   h1.innerHTML = traducaoIngles.traduzirH1;
   p[0].innerHTML = traducaoIngles.traduzirP;
   input.placeholder = traducaoIngles.traduzirPlacelHoder;
@@ -40,5 +46,24 @@ export const elementoEmIngles = () => {
   p[2].innerHTML = traducaoIngles.traduzirPExplicativo;
   a.innerHTML = `${traducaoIngles.traduirA}<img src="public/images/icon-arrow.svg" alt="fylo">`;
   textoCeo.innerHTML = traducaoIngles.textoCeo;
-  span.innerHTML = traducaoIngles.textoSpan
+  span.innerHTML = traducaoIngles.textoSpan;
+  perca.innerHTML = traducaoIngles.textoPerca;
+}
+
+export const aplicarTraducaoIngles = () => {
+  atualizarValoresEmIngles();
+};
+const dadosTraducao = JSON.stringify(traducaoIngles); //converte para um json
+const recuperandoString = localStorage.getItem("dadosSalvo");
+localStorage.setItem("dadosSalvo", dadosTraducao);
+
+export const definirPortugues = () => {
+  localStorage.removeItem("dadosSalvo");
+  location.reload();
+};
+
+export const salvarIdiomaIngles = () => {
+  if (recuperandoString) {
+    atualizarValoresEmIngles();
+  }
 };
