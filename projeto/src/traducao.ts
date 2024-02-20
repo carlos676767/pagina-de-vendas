@@ -5,8 +5,8 @@ const p = document.querySelectorAll("p");
 const h2 = document.querySelector("h2") as HTMLHeadingElement;
 const a = document.querySelectorAll("a")[0] as HTMLAnchorElement;
 const textoCeo = document.querySelector(".texto-ceo") as HTMLParagraphElement;
-const span = document.getElementById("parafro") as HTMLParagraphElement
-const perca = document.querySelector(".perca") as HTMLParagraphElement
+const span = document.getElementById("parafro") as HTMLParagraphElement;
+const perca = document.querySelector(".perca") as HTMLParagraphElement;
 type traducaoIngles = {
   traduzirH1: string;
   traduzirP: string;
@@ -36,8 +36,6 @@ const traducaoIngles: traducaoIngles = {
     "Don't miss your chance with Fylo! Join a innovative team passionate about exciting projectsTake advantage of opportunities for learning and personal growth. Be part of this successful journey!",
 };
 
-
-
 const atualizarValoresEmIngles = () => {
   h1.innerHTML = traducaoIngles.traduzirH1;
   p[0].innerHTML = traducaoIngles.traduzirP;
@@ -48,19 +46,24 @@ const atualizarValoresEmIngles = () => {
   textoCeo.innerHTML = traducaoIngles.textoCeo;
   span.innerHTML = traducaoIngles.textoSpan;
   perca.innerHTML = traducaoIngles.textoPerca;
-}
+};
+
+
 
 export const aplicarTraducaoIngles = () => {
   atualizarValoresEmIngles();
 };
-const dadosTraducao = JSON.stringify(traducaoIngles); //converte para um json
+
+const dadosTraducao = JSON.stringify(traducaoIngles);
 const recuperandoString = localStorage.getItem("dadosSalvo");
 localStorage.setItem("dadosSalvo", dadosTraducao);
 
 export const definirPortugues = () => {
   localStorage.removeItem("dadosSalvo");
-  location.reload();
 };
+
+
+
 
 export const salvarIdiomaIngles = () => {
   if (recuperandoString) {

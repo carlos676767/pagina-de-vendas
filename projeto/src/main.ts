@@ -72,8 +72,6 @@ const darkMode = () => {
   const savedLocalStorageData = () => {
     const recuperarValorBlack = localStorage.getItem("black");
     const recuperarValorEstado = localStorage.getItem("valorCheckado");
-    console.log(recuperarValorEstado);
-
     if (
       recuperarValorBlack === cores.corPreta &&
       recuperarValorEstado == "true"
@@ -102,19 +100,33 @@ const alterarTituLoBody = () => {
 };
 
 alterarTituLoBody();
-
+const select = document.querySelector("select") as HTMLSelectElement;
 const trocarIdioma = () => {
-  const select = document.querySelector("select") as HTMLSelectElement;
   select.addEventListener("change", () => {
-    const selecionarOption = select.options[select.selectedIndex].value;
-    if (selecionarOption == "Ingles") {
-      aplicarTraducaoIngles()
-    } else {
-      definirPortugues()
+    if (select.options[0].selected) {
+      aplicarTraducaoIngles();
+      localStorage.setItem("valor", select.options[0].value);
+    } else if (select.options[1].selected) {
+      localStorage.setItem("valor", select.options[1].value);
+      definirPortugues();
     }
   });
+
+  const dadosSalvosSelect = () => {
+    const receperarChaveLocalStorage = localStorage.getItem("valor")
+    console.log(receperarChaveLocalStorage);
+    if (receperarChaveLocalStorage === select.options[0].value) {
+      select.options[0].value = receperarChaveLocalStorage
+    }else if(receperarChaveLocalStorage === select.options[1].value){
+     select.options[1].value = receperarChaveLocalStorage
+    }
+  }
+  dadosSalvosSelect();
 };
 
-trocarIdioma();
+
+
+
 
 salvarIdiomaIngles()
+trocarIdioma()
