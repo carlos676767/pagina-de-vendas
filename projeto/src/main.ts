@@ -105,7 +105,6 @@ const trocarIdioma = () => {
   select.addEventListener("change", () => {
     if (select.options[0].selected) {
       aplicarTraducaoIngles();
-      localStorage.setItem("valor", select.options[0].value);
     } else if (select.options[1].selected) {
       localStorage.setItem("valor", select.options[1].value);
       definirPortugues();

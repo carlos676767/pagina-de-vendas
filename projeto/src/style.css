@@ -32,44 +32,18 @@ main {
   background-image: url(../public/images/bg-curve-desktop.svg);
 }
 
-header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 30px;
-  z-index: 1000000;
-  position: fixed;
-  position: relative;
-}
 
 .darkModeblack{
   background-color: black;
 }
 
-.conheca a {
-  color: hsl(170, 45%, 43%);
-  font-size: 10px;
-  font-family: 'Inter', sans-serif;
-  position: relative;
-  text-decoration: none;
-}
 
-.conheca a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 150px;
-  height: 1px;
-  background-color:hsl(170, 45%, 43%); ;
-}
 
 .informacoes{
   display: flex;
   flex-direction: column;
   background-color: white;
   padding: 20px;
-
   margin-top: 20px;
   width: 300px;box-shadow: 8px 4px 10px 3px rgba(0, 0, 0, 0.68);
   -webkit-box-shadow: 8px 4px 10px 3px rgba(0, 0, 0, 0.68);
@@ -84,12 +58,29 @@ header {
 
 p a{
   text-decoration: none;
+  color:hsl(170, 45%, 43%) ;
 }
+
+ a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 150px;
+  height: 1px;
+  background-color:hsl(170, 45%, 43%); ;
+}
+
+
 .informacoes img{
   width: 30px;
   border-radius: 50%;
   object-fit: cover;
   height: 30px;
+}
+
+.logo{
+  width: 30px;
 }
 
 .informacoes-ceo{
@@ -105,31 +96,9 @@ p a{
   font-size: 10px;
 }
 
-.li {
-  list-style: none;
-  font-size: 10px;
-  font-family: 'Inter', sans-serif;
-  display: inline-block;
-  margin-right: 30px;
-  color: hsl(243, 87%, 12%);
-  cursor: pointer;
-  position: relative; 
-}
 
-.li:focus {
-  outline: none; 
-}
 
-.li::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background-color: red;
-  transition: width 0.3s ease; 
-}
+
 
 .li:focus::after {
   width: 100%; 
@@ -144,6 +113,44 @@ p a{
     width: 100%;
   }
 }
+
+.header {
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  align-items: center;
+  justify-content: space-around;
+  background: white;
+  height: 60px;
+  padding: 5px 10px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  
+}
+
+
+
+.imagem {
+  background-image: url(arvore-solitaria.jpg);
+  background-size: cover;
+  margin-top: 30px;
+  height: 100vh;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+}
+
+
+.label-menu,
+.checkbox {
+  display: none;
+}
+
 
 .header-conteudo-principal {
   background-image: url('../public/images/bg-curve-desktop.svg');
@@ -265,10 +272,17 @@ input[type="text"]:focus {
   border: 2px solid red;
 }
 
-
-.textoBlack {
-  color: red;
+.li {
+  list-style: none;
+  font-size: 10px;
+  font-family: 'Inter', sans-serif;
+  display: inline-block;
+  margin-right: 30px;
+  color: hsl(243, 87%, 12%);
+  cursor: pointer;
+  position: relative; 
 }
+
 
 .inputverde {
   border: 2px solid hsl(224, 93%, 58%);
@@ -319,6 +333,7 @@ footer{
 
 
 
+
 h3{
   color: white;
 }
@@ -329,7 +344,6 @@ h3{
     width: auto;
     margin-left: auto;
     margin-right: auto;
-
   }
 
   .conteudo-do-meio {
@@ -353,5 +367,75 @@ h3{
 
   .br {
     display: none;
+  }
+}
+
+@media(max-width: 1000px){
+  .menu {
+    display: block;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    position: absolute;
+    top: 4.6875rem;
+    left: 0;
+    background: white;
+    width: 100%;
+    height: 0;
+    visibility: hidden;
+    z-index: 1;
+    overflow-y: hidden;
+    transition: 0.5s;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  
+  .li {
+    font-size: 14px;
+  }
+  
+
+  
+  
+
+  .label-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: black;
+    padding-block: 1rem;
+    cursor: pointer;
+  }
+  .hamburguer {
+    border-top: 0.125rem solid;
+    width: 1.25rem;
+  }
+
+
+  .hamburguer::before,
+  .hamburguer::after {
+    content: " ";
+    display: block;
+    width: 1.25rem;
+    height: 0.125rem;
+    background: currentColor;
+    margin-top: 0.3125rem;
+    position: relative;
+    transition: 0.3s;
+  }
+  .checkbox:checked ~ .menu {
+    height: calc(100vh - 4.6875rem);
+    visibility: visible;
+    overflow-y: auto;
+  }
+  .checkbox:checked ~ .label-menu .hamburguer {
+    border-top-color: transparent;
+  }
+  .checkbox:checked ~ .label-menu .hamburguer::before {
+    transform: rotate(135deg);
+  }
+  .checkbox:checked ~ .label-menu .hamburguer::after {
+    transform: rotate(-135deg);
+    top: -0.4375rem;
   }
 }
