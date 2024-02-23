@@ -1,8 +1,10 @@
 import Swal from "sweetalert2";
-import { aplicarTraducaoIngles, definirPortugues, salvarIdiomaIngles } from "./traducao";
+import { atualizarValoresEmIngles, atualizarValoresEmPortugues, salvarIdiomaIngles } from "./traducao";
 
 
 export const input = document.getElementById("input") as HTMLInputElement;
+export const select = document.querySelector("select") as HTMLSelectElement;
+
 
 const mensagemDeEnvioEmail = () => {
   Swal.fire({
@@ -63,6 +65,7 @@ const darkMode = () => {
       bodyBlack();
       localStorage.setItem("black", cores.corPreta);
       localStorage.setItem("valorCheckado", inputChecked.checked.toString());
+
     } else {
       bodyWhite();
       localStorage.setItem("valorCheckado", inputChecked.checked.toString());
@@ -100,32 +103,31 @@ const alterarTituLoBody = () => {
 };
 
 alterarTituLoBody();
-const select = document.querySelector("select") as HTMLSelectElement;
-const trocarIdioma = () => {
-  select.addEventListener("change", () => {
-    if (select.options[0].selected) {
-      aplicarTraducaoIngles();
-    } else if (select.options[1].selected) {
-      localStorage.setItem("valor", select.options[1].value);
-      definirPortugues();
-    }
-  });
-
-  const dadosSalvosSelect = () => {
-    const receperarChaveLocalStorage = localStorage.getItem("valor")
-    console.log(receperarChaveLocalStorage);
-    if (receperarChaveLocalStorage === select.options[0].value) {
-      select.options[0].value = receperarChaveLocalStorage
-    }else if(receperarChaveLocalStorage === select.options[1].value){
-     select.options[1].value = receperarChaveLocalStorage
-    }
+select.addEventListener("change", () => {
+  if (select.options[0].selected){
+    localStorage.setItem("valor", select.options[0].value);
+  } else if (select.options[1].selected) {
+    localStorage.setItem("valor", select.options[1].value);
   }
-  dadosSalvosSelect();
-};
+  const salvarValor = localStorage.getItem("valor");
+  if (salvarValor === "Ingles") {
+    atualizarValoresEmIngles();
+  } else {
+    atualizarValoresEmPortugues();
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  console.log(localStorage.getItem("valor"))
+  const salvarValor = localStorage.getItem("valor");
+  if (salvarValor === "Ingles") {
+    atualizarValoresEmIngles();
+    select.value = "Ingles";
+  } else {
+    atualizarValoresEmPortugues();
+    select.value = "portugues";
+  }
+});
 
 
-
-
-
-salvarIdiomaIngles()
-trocarIdioma()
+salvarIdiomaIngles();

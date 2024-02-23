@@ -272,6 +272,22 @@ input[type="text"]:focus {
   border: 2px solid red;
 }
 
+
+select {
+  border: none;
+  outline: none; 
+  -webkit-appearance: none; 
+  -moz-appearance: none; 
+  appearance: none; 
+  color: hsl(243, 87%, 12%);
+}
+
+
+option {
+  border: none; 
+}
+
+
 .li {
   list-style: none;
   font-size: 10px;
@@ -332,8 +348,6 @@ footer{
 }
 
 
-
-
 h3{
   color: white;
 }
@@ -370,7 +384,7 @@ h3{
   }
 }
 
-@media(max-width: 1000px){
+@media(max-width:768px){
   .menu {
     display: block;
     display: flex;
@@ -389,13 +403,10 @@ h3{
     gap: 30px;
     margin-top: 30px;
   }
-  
+
   .li {
     font-size: 14px;
   }
-  
-
-  
   
 
   .label-menu {
