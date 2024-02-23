@@ -4,6 +4,7 @@ import { atualizarValoresEmIngles, atualizarValoresEmPortugues, salvarIdiomaIngl
 
 export const input = document.getElementById("input") as HTMLInputElement;
 export const select = document.querySelector("select") as HTMLSelectElement;
+export const mostrar = document.querySelector(".mensagem") as HTMLParagraphElement;
 
 
 const mensagemDeEnvioEmail = () => {
@@ -15,7 +16,6 @@ const mensagemDeEnvioEmail = () => {
 };
 
 const verificarInputValor = () => {
-  const mostrar = document.querySelector(".mensagem") as HTMLParagraphElement;
   const obterDadosInput = input.value;
   const dominiosValidosRegex =
     /^[\w-]+(?:\.[\w-]+)*@(?:[\w-]+\.)+[a-zA-Z]{2,7}$/;
@@ -28,10 +28,10 @@ const verificarInputValor = () => {
     mostrar.textContent = "Digite um email valido";
     input.classList.remove("inputverde");
     input.classList.add("inputVermelho");
+    mostrar.textContent = 'Digite um email valido.'
   }
 };
-
-const botaoVerificar = document.getElementById("botaoVerificar");
+ export const botaoVerificar = document.getElementById("botaoVerificar") as HTMLButtonElement;
 botaoVerificar?.addEventListener("click", () => {
   verificarInputValor();
 });
@@ -128,6 +128,19 @@ document.addEventListener("DOMContentLoaded", function () {
     select.value = "portugues";
   }
 });
+
+
+const teste = () => {
+  fetch("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL")
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('Erro ao obter cotações:', error);
+  });
+}
+
 
 
 salvarIdiomaIngles();

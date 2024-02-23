@@ -1,4 +1,4 @@
-import { input } from "./main";
+import { botaoVerificar, input } from "./main";
 
 const h1 = document.querySelector("h1") as HTMLHeadingElement;
 const p = document.querySelectorAll("p");
@@ -7,6 +7,10 @@ const a = document.querySelectorAll("a")[0] as HTMLAnchorElement;
 const textoCeo = document.querySelector(".texto-ceo") as HTMLParagraphElement;
 const span = document.getElementById("parafro") as HTMLParagraphElement;
 const perca = document.querySelector(".perca") as HTMLParagraphElement;
+let li = document.querySelectorAll("li") 
+
+
+
 interface htmlLanguage {
   traduzirH1: string;
   traduzirP: string;
@@ -17,6 +21,10 @@ interface htmlLanguage {
   textoCeo: string;
   textoSpan: string;
   textoPerca: string;
+  botaoEmail: string
+  liLinguage: string
+  liEquipe: string
+  liRegistro: string
 };
 
 const traducaoIngles: htmlLanguage = {
@@ -34,6 +42,10 @@ const traducaoIngles: htmlLanguage = {
   textoSpan: "Connect with us on social media:",
   textoPerca:
     "Don't miss your chance with Fylo! Join a innovative team passionate about exciting projectsTake advantage of opportunities for learning and personal growth. Be part of this successful journey!",
+    botaoEmail: "Get Started",
+    liLinguage: "Features",
+    liEquipe: "Team",
+    liRegistro: "Sign In"
 };
 
 const traducaoPortugues: htmlLanguage = {
@@ -49,7 +61,11 @@ traduirA: "Conheça mais sobre a Fylo",
 textoCeo:
   "Desde 2008, estamos na vanguarda da tecnologia, sempre nos adaptando às demandas do mercado em constante mudança.",
 textoSpan: "Conecte-se conosco nas redes sociais:",
-textoPerca: "Não perca a chance com a Fylo! Junte-se a umaequipe inovadora e apaixonada por projeto emocionantesAproveite as oportunidades de aprendizado e crescimento pessoal.Seja parte dessa jornada de sucesso!"
+textoPerca: "Não perca a chance com a Fylo! Junte-se a umaequipe inovadora e apaixonada por projeto emocionantesAproveite as oportunidades de aprendizado e crescimento pessoal.Seja parte dessa jornada de sucesso!",
+botaoEmail: "Cadastre seu email",
+liLinguage: "Atualiações",
+liEquipe: "Equipe",
+liRegistro: "Registro"
 }
 
 export const atualizarValoresEmIngles = () => {
@@ -62,6 +78,10 @@ export const atualizarValoresEmIngles = () => {
   textoCeo.innerHTML = traducaoIngles.textoCeo;
   span.innerHTML = traducaoIngles.textoSpan;
   perca.innerHTML = traducaoIngles.textoPerca;
+  botaoVerificar.textContent = traducaoIngles.botaoEmail;
+  li[0].textContent = traducaoIngles.liLinguage;
+  li[1].textContent = traducaoIngles.liEquipe;
+  li[2].textContent = traducaoIngles.liRegistro
 };
 
 export const atualizarValoresEmPortugues = () => {
@@ -74,8 +94,18 @@ export const atualizarValoresEmPortugues = () => {
   textoCeo.innerHTML = traducaoPortugues.textoCeo;
   span.innerHTML = traducaoPortugues.textoSpan;
   perca.innerHTML = traducaoPortugues.textoPerca;
+  li[0].textContent = traducaoPortugues.liLinguage;
+  li[1].textContent = traducaoPortugues.liEquipe;
+  li[2].textContent = traducaoPortugues.liRegistro
 };
 
+ export const botaoIngles = () => {
+  botaoVerificar.textContent = traducaoIngles.botaoEmail
+}
+
+ export const botaoPtbr = () => {
+  botaoVerificar.textContent = traducaoPortugues.botaoEmail
+}
 
 const dadosTraducao = JSON.stringify(traducaoIngles);
 const recuperandoString = localStorage.getItem("dadosSalvo");
