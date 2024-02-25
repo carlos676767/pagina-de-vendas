@@ -7,9 +7,7 @@ const a = document.querySelectorAll("a")[0] as HTMLAnchorElement;
 const textoCeo = document.querySelector(".texto-ceo") as HTMLParagraphElement;
 const span = document.getElementById("parafro") as HTMLParagraphElement;
 const perca = document.querySelector(".perca") as HTMLParagraphElement;
-let li = document.querySelectorAll("li") 
-
-
+let li = document.querySelectorAll("li");
 
 interface htmlLanguage {
   traduzirH1: string;
@@ -21,11 +19,11 @@ interface htmlLanguage {
   textoCeo: string;
   textoSpan: string;
   textoPerca: string;
-  botaoEmail: string
-  liLinguage: string
-  liEquipe: string
-  liRegistro: string
-};
+  botaoEmail: string;
+  liLinguage: string;
+  liEquipe: string;
+  liRegistro: string;
+}
 
 const traducaoIngles: htmlLanguage = {
   traduzirH1:
@@ -42,31 +40,32 @@ const traducaoIngles: htmlLanguage = {
   textoSpan: "Connect with us on social media:",
   textoPerca:
     "Don't miss your chance with Fylo! Join a innovative team passionate about exciting projectsTake advantage of opportunities for learning and personal growth. Be part of this successful journey!",
-    botaoEmail: "Get Started",
-    liLinguage: "Features",
-    liEquipe: "Team",
-    liRegistro: "Sign In"
+  botaoEmail: "Get Started",
+  liLinguage: "Features",
+  liEquipe: "Team",
+  liRegistro: "Sign In",
 };
 
 const traducaoPortugues: htmlLanguage = {
   traduzirH1:
-  "Construa uma carreira de <br>sucesso conheça já nossos <br> serviços",
-traduzirP:
-  "Com o Fylo, você consegue um emprego como desenvolvedor <br> de uma maneira fácil. Venha já e confira nosso trabalho.",
-traduzirPlacelHoder: "Digite seu email.",
-traducaoH2: "Confira Um pouco de nossos produtos",
-traduzirPExplicativo:
-  "Na Fylo, acreditamos no potencial dos estudantes desde o primeiro ano de faculdade. <br>Com nosso programa inovador, você terá a oportunidade de mergulhar no mundo do <br> desenvolvimento back end desde cedo.",
-traduirA: "Conheça mais sobre a Fylo",
-textoCeo:
-  "Desde 2008, estamos na vanguarda da tecnologia, sempre nos adaptando às demandas do mercado em constante mudança.",
-textoSpan: "Conecte-se conosco nas redes sociais:",
-textoPerca: "Não perca a chance com a Fylo! Junte-se a umaequipe inovadora e apaixonada por projeto emocionantesAproveite as oportunidades de aprendizado e crescimento pessoal.Seja parte dessa jornada de sucesso!",
-botaoEmail: "Cadastre seu email",
-liLinguage: "Atualiações",
-liEquipe: "Equipe",
-liRegistro: "Registro"
-}
+    "Construa uma carreira de <br>sucesso conheça já nossos <br> serviços",
+  traduzirP:
+    "Com o Fylo, você consegue um emprego como desenvolvedor <br> de uma maneira fácil. Venha já e confira nosso trabalho.",
+  traduzirPlacelHoder: "Digite seu email.",
+  traducaoH2: "Confira Um pouco de nossos produtos",
+  traduzirPExplicativo:
+    "Na Fylo, acreditamos no potencial dos estudantes desde o primeiro ano de faculdade. <br>Com nosso programa inovador, você terá a oportunidade de mergulhar no mundo do <br> desenvolvimento back end desde cedo.",
+  traduirA: "Conheça mais sobre a Fylo",
+  textoCeo:
+    "Desde 2008, estamos na vanguarda da tecnologia, sempre nos adaptando às demandas do mercado em constante mudança.",
+  textoSpan: "Conecte-se conosco nas redes sociais:",
+  textoPerca:
+    "Não perca a chance com a Fylo! Junte-se a umaequipe inovadora e apaixonada por projeto emocionantesAproveite as oportunidades de aprendizado e crescimento pessoal.Seja parte dessa jornada de sucesso!",
+  botaoEmail: "Cadastre seu email",
+  liLinguage: "Atualiações",
+  liEquipe: "Equipe",
+  liRegistro: "Registro",
+};
 
 export const atualizarValoresEmIngles = () => {
   h1.innerHTML = traducaoIngles.traduzirH1;
@@ -81,7 +80,7 @@ export const atualizarValoresEmIngles = () => {
   botaoVerificar.textContent = traducaoIngles.botaoEmail;
   li[0].textContent = traducaoIngles.liLinguage;
   li[1].textContent = traducaoIngles.liEquipe;
-  li[2].textContent = traducaoIngles.liRegistro
+  li[2].textContent = traducaoIngles.liRegistro;
 };
 
 export const atualizarValoresEmPortugues = () => {
@@ -96,25 +95,30 @@ export const atualizarValoresEmPortugues = () => {
   perca.innerHTML = traducaoPortugues.textoPerca;
   li[0].textContent = traducaoPortugues.liLinguage;
   li[1].textContent = traducaoPortugues.liEquipe;
-  li[2].textContent = traducaoPortugues.liRegistro
+  li[2].textContent = traducaoPortugues.liRegistro;
+  botaoVerificar.textContent = traducaoPortugues.botaoEmail
 };
 
- export const botaoIngles = () => {
-  botaoVerificar.textContent = traducaoIngles.botaoEmail
-}
+export const botaoIngles = () => {
+  botaoVerificar.textContent = traducaoIngles.botaoEmail;
+};
 
- export const botaoPtbr = () => {
-  botaoVerificar.textContent = traducaoPortugues.botaoEmail
-}
+export const botaoPtbr = () => {
+  botaoVerificar.textContent = traducaoPortugues.botaoEmail;
+};
 
 const dadosTraducao = JSON.stringify(traducaoIngles);
 const recuperandoString = localStorage.getItem("dadosSalvo");
 localStorage.setItem("dadosSalvo", dadosTraducao);
-
-
 
 export const salvarIdiomaIngles = () => {
   if (recuperandoString) {
     atualizarValoresEmIngles();
   }
 };
+
+
+
+
+
+

@@ -351,6 +351,32 @@ footer{
 h3{
   color: white;
 }
+
+.sobre{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagens{
+  width: 300px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.left-button, .right-button {
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.fa-arrow-right{
+  border: none;
+}
+
 @media(max-width: 767px) {
   main {
     display: flex;

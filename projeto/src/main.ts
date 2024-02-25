@@ -118,7 +118,7 @@ select.addEventListener("change", () => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  console.log(localStorage.getItem("valor"))
+  console.log(localStorage.getItem("valor"));
   const salvarValor = localStorage.getItem("valor");
   if (salvarValor === "Ingles") {
     atualizarValoresEmIngles();
@@ -129,18 +129,26 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+const gerarImagensProgramacao = () => {
+  const img1 = document.getElementById("imagem1") as HTMLImageElement;
+  const img2 = document.getElementById("imagem2") as HTMLImageElement;
+  const img3 = document.getElementById("iamgem3") as HTMLImageElement;
+  console.log(img3);
+  
+  fetch(
+    "https://api.unsplash.com/search/photos/?query=programming&client_id=hzk92Q_lgmqyI7V-knidJ3MBD0jzoxwuFLMhNidCjjY"
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      img1.src = data.results[1].urls.regular;
+      img2.src = data.results[3].urls.regular;
+      img3.src = data.results[9].urls.regular;
+    })
 
-const teste = () => {
-  fetch("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL")
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-  })
-  .catch(error => {
-    console.error('Erro ao obter cotações:', error);
-  });
-}
+    .catch((error) => {
+      console.log("Nao foi possivel carregar as imagens", error);
+    });
+};
 
-
-
+gerarImagensProgramacao();
 salvarIdiomaIngles();
