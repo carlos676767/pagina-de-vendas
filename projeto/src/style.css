@@ -324,6 +324,13 @@ option {
   margin-right: 100px;
 }
 
+h3{
+  font-family: 'Inter', sans-serif;
+  font-size: 40px;
+  color: hsl(243, 87%, 12%);
+
+}
+
 footer{
   display: flex;
   flex-direction: column;
@@ -373,6 +380,32 @@ h3{
   cursor: pointer;
 }
 
+.saiba-mais{
+  display: flex;
+  justify-content: center;
+  background-image: url(../public/images/illustration-1.svg);
+}
+
+.saber{
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+}
+
+#carouselExample {
+  width: 80%; 
+  max-width: 450px;
+  margin: auto;
+  height: auto;
+}
+
+
+span{
+  font-weight: bolder;
+  color: hsl(243, 87%, 12%);
+}
+
+
 .fa-arrow-right{
   border: none;
 }
@@ -394,6 +427,20 @@ h3{
   .br {
     display: none;
   }
+  .saiba-mais{
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #carouselExample {
+    width: auto; 
+    margin: auto;
+    height: auto;
+  }
+  
+  
 }
 
 @media (min-width: 768px) and (max-width: 800px) {
@@ -404,10 +451,30 @@ h3{
     margin-left: auto;
     margin-right: auto;
   }
-
   .br {
     display: none;
   }
+
+  #carouselExample {
+    width: auto; 
+    margin: auto;
+    height: auto;
+  }
+  
+  .saiba-mais{
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .saber{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+   }
+    
 }
 
 @media(max-width:768px){
@@ -433,7 +500,27 @@ h3{
   .li {
     font-size: 14px;
   }
+
+  #carouselExample {
+    width: auto; 
+    margin: auto;
+    height: auto;
+  }
   
+ .saber{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+ }
+  
+  .saiba-mais{
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   .label-menu {
     display: flex;

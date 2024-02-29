@@ -20,28 +20,30 @@
 
   <header class="header" id="header">
     <img src="public/images/logo.svg" alt="logo" class="logo">
-        <nav class="nav">
-            <input type="checkbox" id="checkbox" class="checkbox">
-            <label for="checkbox" class="label-menu" id="label"><span class="hamburguer"></span></label>
-            <ul class="menu">
-              <li class="li">Atualiacoes</li>
-              <li class="li">Equipe</li>
-              <li class="li">Registro
-              </li>
-              <li class="li"><select name="select" id="select">
-                <option value="portugues">portugues</option>
-                <option value="Ingles">Ingles</option>
-              </select></li>
-              <li class="li"> <label class="dark-mode-toggle">
-                <input type="checkbox" id="darkModeToggle">
-                <span class="slider"></span>
-              </label></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="nav">
+      <input type="checkbox" id="checkbox" class="checkbox">
+      <label for="checkbox" class="label-menu" id="label"><span class="hamburguer"></span></label>
+      <ul class="menu">
+        <li class="li">Atualiacoes</li>
+        <li class="li">Equipe</li>
+        <li class="li">Registro
+        </li>
+        <li class="li"><select name="select" id="select">
+            <option value="portugues">portugues</option>
+            <option value="Ingles">Ingles</option>
+          </select></li>
+        <li class="li"> <label class="dark-mode-toggle">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider"></span>
+          </label></li>
+      </ul>
+    </nav>
+  </header>
 
 
-   
+
+
+
 
   <main>
     <article>
@@ -63,19 +65,42 @@
 
 
 
-  <section class="sobre">
-      <div class="container">
-        <button class="left-button"><i class="fa-solid fa-arrow-left"></i></button>
-        <img src="" alt="Imagem" class="imagens" id="imagem1">
-        <img src="" alt="imagem" class="imagens" id="imagem2">
-        <img src="" alt="imagem" class="imagens" id="iamgem3">
-        <button class="right-button"><i class="fa-solid fa-arrow-right"></i></button>
+
+  <section class="saiba-mais">
+    <div class="saber">
+      <h3>Faça parte da <span>Fylo</span>.</h3>
+
+      <p id="tetoSaber">Juntar-se à Fylo é uma oportunidade <br> emocionante de fazer
+        parte de uma equipe <br> dinâmica e
+        inovadora que está transformando <br>
+        a maneira como as pessoas trabalham
+        e se conectam <br> digitalmente.
+        Na Fylo, valorizamos a colaboração,
+        <br> a criatividade e a paixão por criar soluções tecnológicas <br> inovadoras.
+      </p>
+    </div>
+    </div>
+    <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="" class="d-block w-100" alt="imagem1" id="imagem1">
+        </div>
+        <div class="carousel-item">
+          <img src="..." class="d-block w-100" alt="imagem2" id="imagem2">
+        </div>
+        <div class="carousel-item">
+          <img src="..." class="d-block w-100" alt="imagem3" id="imagem3">
+        </div>
       </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
   </section>
-
-
-
- 
 
   <secction class="conteudo-do-meio">
     <aside>
@@ -149,7 +174,7 @@
             </p>
           </div>
           <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-            
+
             <p>
               <a href="#!" class="text-reset">About us</a>
             </p>
@@ -200,7 +225,10 @@
     </section>
 
 
-  <script type="module" src="/src/main.ts"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script type="module" src="/src/main.ts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"></script>
 </body>
+
 </html>
